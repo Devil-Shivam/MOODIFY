@@ -16,13 +16,7 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"), false);
-        }
-    },
+    origin: true,
     credentials: true
 }))
 
@@ -30,12 +24,15 @@ app.use(cors({
  * Serve Frontend Static Files
  */
 const path = require("path");
-app.use(express.static(path.join(__dirname, "../../Frontend/dist")));
+app.use(express.static(path.join(__dirname, "./dist")));
 
 // For React Router: serve index.html for any unknown route
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../Frontend/dist/index.html"));
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "./dist/index.html"));
 });
+    // app.get("/", (req, res) => {
+    //     res.sendFile(path.join(__dirname, "./dist/index.html"));
+    // });
 
 /**
  * Routes
