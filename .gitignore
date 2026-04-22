@@ -7,7 +7,7 @@ pnpm-debug.log*
 
 # Build output
 dist/
-!/Backend/dist/
+!/Backend/src/dist/
 build/
 .cache/
 .vite/
