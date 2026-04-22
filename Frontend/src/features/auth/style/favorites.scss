@@ -1,0 +1,92 @@
+.favorites-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.favorites__topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.favorites__topbar-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.favorites__content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.favorites__list-card,
+.favorites__player-card {
+  background: #12121e;
+  border-radius: 28px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.favorites__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+}
+
+.favorites__item:last-child {
+  margin-bottom: 0;
+}
+
+.favorites__item-meta {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.favorites__item-meta img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.favorites__item-meta strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.favorites__item-meta span {
+  color: #a3a8bf;
+}
+
+.favorites__item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.favorites__empty,
+.favorites__empty-player {
+  color: #a3a8bf;
+}
+
+@media (max-width: 950px) {
+  .favorites__content {
+    grid-template-columns: 1fr;
+  }
+}
