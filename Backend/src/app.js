@@ -27,6 +27,17 @@ app.use(cors({
 }))
 
 /**
+ * Serve Frontend Static Files
+ */
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../../Frontend/dist")));
+
+// For React Router: serve index.html for any unknown route
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../../Frontend/dist/index.html"));
+});
+
+/**
  * Routes
  */
 const authRoutes = require("./routes/auth.routes")
